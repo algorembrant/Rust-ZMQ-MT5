@@ -11,7 +11,7 @@
 #include <Zmq/Zmq.mqh>
 
 // Input parameters
-input string InpBindAddress = "tcp://*:5555"; // Bind Address
+input string InpBindAddress = "tcp://0.0.0.0:5555"; // Bind Address
 
 CZmq *g_publisher;
 

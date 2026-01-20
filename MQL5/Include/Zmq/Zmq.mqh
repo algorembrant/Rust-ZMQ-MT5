@@ -23,9 +23,9 @@
    int zmq_ctx_term(long context);
    long zmq_socket(long context, int type);
    int zmq_close(long socket);
-   int zmq_bind(long socket, const string endpoint);
-   int zmq_connect(long socket, const string endpoint);
-   int zmq_send(long socket, const uchar &buf[], int len, int flags);
+   int zmq_bind(long socket, uchar &endpoint[]);
+   int zmq_connect(long socket, uchar &endpoint[]);
+   int zmq_send(long socket, uchar &buf[], int len, int flags);
    int zmq_recv(long socket, uchar &buf[], int len, int flags);
    int zmq_errno();
 #import
@@ -68,7 +68,11 @@ public:
 
    bool Bind(string endpoint) {
       if(!m_initialized) return false;
-      int rc = zmq_bind(m_socket, endpoint);
+      
+      uchar data[];
+      StringToCharArray(endpoint, data, 0, WHOLE_ARRAY, CP_UTF8);
+      
+      int rc = zmq_bind(m_socket, data);
       if(rc != 0) {
          Print("ZMQ Bind failed. Error: ", zmq_errno());
          return false;
