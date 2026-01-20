@@ -4,7 +4,7 @@
 
 but they all answered the same reply
 
-> no dedicated public projects combination of Rust, ZeroMQ (ZMQ), and MetaTrader 5 (MT5) 
+> no public projects combination of Rust, ZeroMQ (ZMQ), and MetaTrader 5 (MT5) 
 
 
 
