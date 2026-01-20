@@ -1,0 +1,36 @@
+# I asked leading AI models the same question
+
+> Show me GitHub or Hugging projects or any link that has Rust + ZMQ + MT5 combination, never miss a single link
+
+but they all answered the same reply
+
+> no dedicated public projects combination of Rust, ZeroMQ (ZMQ), and MetaTrader 5 (MT5) 
+
+
+
+
+## Proof
+
+<video src="2026-01-20 20-32-35.mp4" controls autoplay muted loop></video>
+
+---
+
+## other proofs
+
+### Answer 1
+![Answer 1](ans1.png)
+
+### Answer 2
+![Answer 2](ans2.png)
+
+### Answer 3
+![Answer 3](ans3.png)
+
+### Answer 4
+![Answer 4](ans4.png)
+
+### Answer 5
+![Answer 5](ans5.png)
+
+### Answer 6
+![Answer 6](ans6.png)
