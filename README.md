@@ -1,5 +1,7 @@
 ## Rust + ZMQ + MT5's MQL5: Exploiting Micro-Second BID/ASK Live Trading Data
 
+The system operates on a publisher-subscriber model using ZeroMQ (ZMQ) to bridge MetaTrader 5 (via MQL5) and the external Rust application. To exploit micro-second BID/ASK live trading data to create a simple orderflow charting tool.
+
 ![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
 ![MetaTrader 5](https://img.shields.io/badge/MetaTrader_5-0075FF?style=for-the-badge&logo=metatraderfive&logoColor=white)
 ![ZeroMQ](https://img.shields.io/badge/ZeroMQ-DF0000?style=for-the-badge&logo=zeromq&logoColor=white)
@@ -8,8 +10,6 @@
 ## 🌐 Software Demonstration
 
 https://github.com/user-attachments/assets/71c51bb2-324b-4c97-ab0d-807a2c0d0d7c
-
-The system operates on a Publisher-Subscriber model using ZeroMQ (ZMQ) to bridge MetaTrader 5 (MQL5) and the external Rust application.
 
 ### Mechanics
 1.  **Publisher (MQL5)**:
