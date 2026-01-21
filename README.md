@@ -195,7 +195,7 @@ If you use this project in your research or application, please cite it as follo
 
 ```bibtex
 @software{RustZmqMt5,
-  author = {Algorembrant},
+  author = {Albeos, Rembrant},
   title = {Rust + ZMQ + MT5's MQL5: Exploiting Micro-Second BID/ASK Live Trading Data},
   year = {2026},
   url = {https://github.com/algorembrant/Rust-ZMQ-MT5},
