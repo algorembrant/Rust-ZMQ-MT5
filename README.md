@@ -65,10 +65,23 @@ Extensive research across GitHub, Hugging Face, and consultation with leading AI
     <td><img src="survey/ans5.png" alt=""></td>
     <td><img src="survey/ans6.png" alt=""></td>
   </tr>
+  <tr>
+    <td><img src="survey/ans7.png" alt=""></td>
+    <td><img src="survey/ans8.png" alt=""></td>
+    <td><img src="survey/ans9.png" alt=""></td>
+  </tr>
 </table>
 
 
-I used AI-leading platforms (Grok, Gemini, Claude, ChatGPT, MSCopilot, Perplexity) to validate my claim for _"**The very First**: Exploiting micro-second BID/ASK live trading data from **MetaTrader 5 (MT5)** using the specific combination of **Rust + ZeroMQ (ZMQ) + MetaQuotes Language (MQL5).**"_
+I used AI-leading platforms (Grok, Gemini, Claude, ChatGPT, MSCopilot, Perplexity, Baidu (Ernie Bot), Deepseek, Qwen) to validate my claim for _"**The very First**: Exploiting micro-second BID/ASK live trading data from **MetaTrader 5 (MT5)** using the specific combination of **Rust + ZeroMQ (ZMQ) + MetaQuotes Language (MQL5).**"_. 
+
+*Visit my previous app to explore 284 AI platforms in one place, [AiQG](https://aiqg.vercel.app/)*<br>
+
+Well, some of those AI models hallucinate, proceeded to suggest a project's combination of a pair: either Python with ZMQ or C++ with ZMQ, but not the combination of all three (Rust + ZMQ + MT5) I've mentioned. Hence, I've prompt a additional clarification saying ***"strictly those 3 combination"***, and proceeded to prompt the same question: ***"Show me GitHub or Hugging projects or any link that has 'Rust + ZMQ + MT5 combination' (strictly those 3), never miss a single link"***. MT5's native language is MQL5, built after C++, and I wanted to fetch data from that platform using ZMQ and plot it using Rust for a fast-phase developing chart tool. After that, they ALL say the same.
+
+> "no public projects combination of Rust, ZeroMQ (ZMQ), and MetaTrader 5 (MT5)."
+
+Since no one did that combination, at least at the time of developing/writing *(Jan 20-21, 2026)*, I've decided to create one.
 
 ---
 
