@@ -1,1 +1,19 @@
 World Record Holder for making the first project that combines Rust + ZMQ + MT5 
+
+
+
+## Tech
+- Rust<br>
+- ZeroMQ (ZMQ)<br>
+- MetaQuotes Language 5 (MQL5)<br>
+- MetaQuotes Language 4 (MQL4)<br>
+
+## Applications
+- MetaTrader 5 (MT5)<br>
+- Visual Studio Code<br>
+- Visual Studio C++ Build Tools   <br>
+- Google Antigravity<br>
+- Google Gemini Pro<br>
+
+
+
