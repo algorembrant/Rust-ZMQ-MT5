@@ -151,7 +151,7 @@ The system consists of two main components acting in a Publisher-Subscriber mode
 
 ---
 
-## ⚠️ Common Errors & Troubleshooting: A Definitive Guide
+## ⚠️ Common Errors & Troubleshooting
 
 This project combines three distinct technologies (Rust, MQL5, ZeroMQ) across two different runtime environments (MetaTrader 5 and Windows Desktop). This complexity can lead to specific errors. Below is a comprehensive guide to resolving every known issue.
 
