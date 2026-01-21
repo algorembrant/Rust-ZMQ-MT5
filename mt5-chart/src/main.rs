@@ -120,7 +120,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let options = eframe::NativeOptions::default();
     eframe::run_native(
-        "Rust + MT5 Chart",
+        "Rust + ZMQ + MT5's MQL5 Chart",
         options,
         Box::new(|_cc| Box::new(Mt5ChartApp::new(rx))),
     ).map_err(|e| e.into())
