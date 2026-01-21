@@ -43,3 +43,43 @@ Defined in `mt5-chart/Cargo.toml`:
 - **Documentation**:
     - `README.md`: Project documentation.
 
+## Mechanics & Workflow
+
+The system operates on a Publisher-Subscriber model using ZeroMQ (ZMQ) to bridge MetaTrader 5 (MQL5) and the external Rust application.
+
+### Data Flow
+1.  **Publisher (MQL5)**:
+    -   The `ZmqPublisher.mq5` Expert Advisor initializes a ZMQ **PUB** socket and binds it to `tcp://*:5555`.
+    -   On every market tick (`OnTick()`), it retrieves the current Bid/Ask prices.
+    -   It constructs a JSON object (e.g., `{"symbol": "XAUUSD", "bid": 2025.50, ...}`) and publishes it as a message.
+
+2.  **Subscriber (Rust)**:
+    -   The `mt5-chart` application initializes a ZMQ **SUB** socket and connects to `tcp://127.0.0.1:5555`.
+    -   It runs an asynchronous Tokio task that listens for incoming ZMQ messages.
+    -   Upon receiving a message, it deserializes the JSON data into a Rust struct (`TickData`).
+    -   The data is sent via an internal channel (`mpsc`) to the GUI thread.
+    -   The `eframe`/`egui` interface updates the chart and labels in real-time.
+
+### Workflow Algorithm
+
+```mermaid
+sequenceAlgorithm
+    participant MT5 as MetaTrader 5 (MQL5)
+    participant ZMQ as ZeroMQ (PUB/SUB)
+    participant Rust as Rust Client (mt5-chart)
+    participant GUI as GUI (egui)
+
+    Note over MT5, Rust: Initialization
+    Rust->>ZMQ: Connect (SUB) to tcp://127.0.0.1:5555
+    MT5->>ZMQ: Bind (PUB) to tcp://0.0.0.0:5555
+    
+    Note over MT5, GUI: Real-time Tick Loop
+    loop Every Tick
+        MT5->>MT5: Get SymbolInfoTick
+        MT5->>ZMQ: Publish JSON {"symbol":..., "bid":...}
+        ZMQ->>Rust: Receive Message
+        Rust->>Rust: Parse JSON to TickData
+        Rust->>GUI: Send Data via Channel
+        GUI->>GUI: Update Plot & Request Repaint
+    end
+```
