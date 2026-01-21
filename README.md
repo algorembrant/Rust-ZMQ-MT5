@@ -9,7 +9,7 @@
 > **The very First**: Exploiting micro-second BIDxASK live data from **MetaTrader 5 (MT5)** using the specific combination of **Rust + ZeroMQ (ZMQ) + MetaQuotes Language (MQL5)**..
 
 I was trying to make a trading orderflows platform, and I came up with an idea: why not use MT5 as datafeed for it? Unfortunately, there are no existing ideal projects I could use as a benchmark, hence I created my own. <br><br>
-I've  worked on and made ~100+ Python trading projects, and I always use MT5 as datafeed, but I want faster; that is why I came up with using Rust as a solution, and ZMQ binding for MT5 is a common practice. In worse case sscenario, there are no Rust+ZMQ+MT5 combination projects existed in the world, which is pretty nuts. I didn't know it only existed in my head, Lmao. So I created it with the help of Google Antigravity.
+I've  worked on and made ~100+ Python trading projects, and I always use MT5 as datafeed, but I want faster; that is why I came up with using Rust as a solution, and ZMQ binding for MT5 is a common practice. In worse case sscenario, there are no _Rust + ZMQ + MT5_ combination projects existed in the world, which is pretty nuts. I didn't know it only existed in my head, Lmao. So I created it with the help of Google Antigravity.
 
 This simple orderflow will serve as my benchmark for future projects.
 
@@ -153,9 +153,9 @@ If you use this project in your research or application, please cite it as follo
 ```bibtex
 @software{RustZmqMt5,
   author = {Algorembrant},
-  title = {Rust + ZMQ + MT5: High-Performance Live Data Bridge},
-  year = {2024},
-  url = {https://github.com/YourUsername/Rust-ZMQ-MT5},
-  note = {First known implementation of micro-second MT5-to-Rust ZMQ bridge}
+  title = {Rust + ZMQ + MT5's MQL5: Exploiting Micro-Second BID/ASK Live Data},
+  year = {2026},
+  url = {https://github.com/algorembrant/Rust-ZMQ-MT5},
+  note = {First known implementation of micro-second using Rust + ZMQ + MT5's MQL5}
 }
 ```
