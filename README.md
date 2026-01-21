@@ -11,7 +11,7 @@
 I was trying to make a trading orderflows platform, and I came up with an idea: why not use MT5 as datafeed for it? Unfortunately, there are no existing ideal projects I could use as a benchmark, hence I created my own. <br><br>
 I've  worked on and made ~100+ Python trading projects, and I always use MT5 as datafeed, but I want faster; that is why I came up with using Rust as a solution, and ZMQ binding for MT5 is a common practice. In worse case sscenario, there are no _Rust + ZMQ + MT5_ combination projects existed in the world, which is pretty nuts. I didn't know it only existed in my head, Lmao. So I created it with the help of Google Antigravity.
 
-This simple orderflow will serve as my benchmark for future projects.
+This simple orderflow tool will serve as a benchmark for future projects.
 
 ---
 
@@ -25,22 +25,34 @@ https://github.com/user-attachments/assets/71c51bb2-324b-4c97-ab0d-807a2c0d0d7c
 
 Extensive research across GitHub, Hugging Face, and consultation with leading AI models confirmed that no prior public projects utilizing this exact high-performance stack existed before this implementation.
 
-**AI Survey Results**:
+**AI Survey Results**
 > "no public projects combination of Rust, ZeroMQ (ZMQ), and MetaTrader 5 (MT5)."
+
+**Proof**
 
 https://github.com/user-attachments/assets/18f9865c-39b8-40cd-a969-733c435621db
 
 **Additional Validation**:
-![Answer 1](survey/ans1.png)
-![Answer 2](survey/ans2.png)
-![Answer 3](survey/ans3.png)
-![Answer 4](survey/ans4.png)
-![Answer 5](survey/ans5.png)
-![Answer 6](survey/ans6.png)
+<table cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="survey/ans1.png" alt=""></td>
+    <td><img src="survey/ans2.png" alt=""></td>
+    <td><img src="survey/ans3.png" alt=""></td>
+  </tr>
+  <tr>
+    <td><img src="survey/ans4.png" alt=""></td>
+    <td><img src="survey/ans5.png" alt=""></td>
+    <td><img src="survey/ans6.png" alt=""></td>
+  </tr>
+</table>
+
+
+I used AI-leading platforms (Grok, Gemini, Claude, ChatGPT, MSCopilot, Perplexity) to validate my claim for _"**The very First**: Exploiting micro-second BID/ASK live data from **MetaTrader 5 (MT5)** using the specific combination of **Rust + ZeroMQ (ZMQ) + MetaQuotes Language (MQL5).**"_
 
 ---
 
 ## 📂 Project Structure
+These are the only nessesary files that you need to have.
 
 ```graphql
 Rust-ZMQ-MT5
@@ -58,6 +70,7 @@ Rust-ZMQ-MT5
 │   │   └── main.rs             # Main Application Logic (Subscribes & Plots)
 │   └── Cargo.toml              # Project Dependencies
 └── README.md                   # This Documentation
+
 ```
 
 ---
