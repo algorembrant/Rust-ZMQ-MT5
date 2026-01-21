@@ -1,0 +1,5 @@
+c:\Users\User\Desktop\VSCode\Rust-ZMQ-MT5\mt5-chart\target\release\deps\mt5_chart.d: src\main.rs
+
+c:\Users\User\Desktop\VSCode\Rust-ZMQ-MT5\mt5-chart\target\release\deps\mt5_chart.exe: src\main.rs
+
+src\main.rs:

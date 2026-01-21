@@ -9,6 +9,7 @@ World Record Holder for making the first project that combines Rust + ZMQ + MT5
 - MetaQuotes Language 4 (MQL4)<br>
 
 ## Applications
+- Windows PowerShell<br>
 - MetaTrader 5 (MT5)<br>
 - Visual Studio Code<br>
 - Visual Studio C++ Build Tools   <br>
@@ -17,3 +18,4 @@ World Record Holder for making the first project that combines Rust + ZMQ + MT5
 
 
 
+Use your windows powershell for 'cargo run --release' and 'cargo clean' commands. Because if you ran it in terminal inside the Antigravity then your PC security may block some of the files from running the 'cargo run --release' command.
