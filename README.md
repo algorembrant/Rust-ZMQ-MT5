@@ -156,6 +156,6 @@ If you use this project in your research or application, please cite it as follo
   title = {Rust + ZMQ + MT5's MQL5: Exploiting Micro-Second BID/ASK Live Data},
   year = {2026},
   url = {https://github.com/algorembrant/Rust-ZMQ-MT5},
-  note = {First known implementation of micro-second using Rust + ZMQ + MT5's MQL5}
+  note = {First known implementation for exploiting micro-second live BID/ASK data using Rust + ZMQ + MT5's MQL5}
 }
 ```
