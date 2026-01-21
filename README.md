@@ -30,7 +30,28 @@ Extensive research across GitHub, Hugging Face, and consultation with leading AI
 
 **Proof**
 
-https://github.com/user-attachments/assets/18f9865c-39b8-40cd-a969-733c435621db
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <video 
+        src="https://github.com/user-attachments/assets/18f9865c-39b8-40cd-a969-733c435621db" 
+        controls 
+        muted
+        loop
+      ></video>
+    </td>
+    <td align="center">
+      <video 
+        src="https://github.com/user-attachments/assets/ccff1713-6c14-46cc-94b0-a1831f4a8b0d" 
+        controls 
+        muted
+        loop
+      ></video>
+    </td>
+  </tr>
+</table>
+
 
 **Additional Validation**:
 <table cellspacing="0" cellpadding="0">
