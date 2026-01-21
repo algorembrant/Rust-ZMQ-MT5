@@ -102,7 +102,7 @@ The system consists of two main components acting in a Publisher-Subscriber mode
 ## 🔧 Installation & Usage
 
 ### Prerequisites
-*   **MetaTrader 5** Client [*link*](https://www.metatrader5.com/)
+*   **MetaTrader 5** Client [*link*](https://www.metatrader5.com/) and it must already be connected to a Broker (use whatever broker you like)
 *   **Rust** (via `rustup`) [*link*](https://rust-lang.org/tools/install/) and configure its file path [*Link*](https://www.youtube.com/watch?v=2PmPWWTmfiU) on your computer.
 *   **Visual Studio Build Tools (C++)** (Required for Rust Linker) [*link*](https://visualstudio.microsoft.com/visual-cpp-build-tools/) select the C++ Build tools (in my case I've downloaded 6gb)
 
