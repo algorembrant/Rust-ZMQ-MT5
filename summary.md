@@ -63,7 +63,7 @@ The system operates on a Publisher-Subscriber model using ZeroMQ (ZMQ) to bridge
 ### Workflow Algorithm
 
 ```mermaid
-sequenceAlgorithm
+sequenceDiagram
     participant MT5 as MetaTrader 5 (MQL5)
     participant ZMQ as ZeroMQ (PUB/SUB)
     participant Rust as Rust Client (mt5-chart)
