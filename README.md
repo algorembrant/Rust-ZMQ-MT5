@@ -151,41 +151,80 @@ The system consists of two main components acting in a Publisher-Subscriber mode
 
 ---
 
-## ⚠️ Common Errors & Troubleshooting
+## ⚠️ Common Errors & Troubleshooting: A Definitive Guide
 
-The development of this bridge involved solving several critical environment-specific issues. Here is a definitive guide to fixing them:
+This project combines three distinct technologies (Rust, MQL5, ZeroMQ) across two different runtime environments (MetaTrader 5 and Windows Desktop). This complexity can lead to specific errors. Below is a comprehensive guide to resolving every known issue.
 
-Make sure to download Rust [*Link*](https://rust-lang.org/tools/install/) and configure its file path [*Link*](https://www.youtube.com/watch?v=2PmPWWTmfiU) on your computer.
-
-### 1. MQL5: "Access Violation" / Crash on Load
-*   **Symptom**: MT5 crashes or the EA removes itself immediately upon loading.
-*   **Cause**: **64-bit Pointer Truncation**. Original MQL5 code often uses `int` (4 bytes) for handles. On 64-bit MT5, pointers are 8 bytes (`long`).
-*   **Fix**: Ensure `Zmq.mqh` uses `long` for all socket and context handles. The provided code in this repo has this fix applied.
-
-### 2. MQL5: "Error 126" (Cannot Load Library)
-*   **Symptom**: `Failed to load 'libzmq.dll'`.
-*   **Cause**: Missing dependencies. `libzmq.dll` depends on `libsodium.dll` and the **Visual C++ Redistributable**.
-*   **Fix**: Ensure `libsodium.dll` [*link*](https://www.dll-files.com/libzmq.dll.html) is in the same `MQL5/Libraries` folder and that you have the VC++ [*link*](https://visualstudio.microsoft.com/visual-cpp-build-tools/) Redistributable installed.
-
-### 3. MQL5: "Error 22" (Invalid Argument) during Bind
-*   **Cause 1**: **Binding to Wildcard**. Defaulting to `tcp://*:5555` can fail on some Windows network stacks.
-    *   **Fix**: Change bind address to `tcp://0.0.0.0:5555`.
-*   **Cause 2**: **String Encoding**. MQL5 strings are Unicode (`wchar_t`), but ZeroMQ expects standard ANSI/UTF-8 C-strings.
-    *   **Fix**: The `Zmq.mqh` wrapper must perform `StringToCharArray` conversion before passing the address to `zmq_bind`.
-
-### 4. Rust: "Linker 'link.exe' not found."
-*   **Symptom**: `cargo run` fails during compilation.
-*   **Cause**: Missing **Microsoft Visual C++ Build Tools**. Rust does not include a linker by default on Windows.
-*   **Fix**: Install "Desktop development with C++" workload via the Visual Studio Installer.
-
-### 5. Rust: "OS Error 32" (File used by another process)
-*   **Symptom**: `Error: failed to remove ... target/release/deps/...`
-*   **Cause**: File locking by VSCode's Rust Analyzer, Terminal, or Antivirus.
+### 1. Critical: Antivirus & Terminal Permissions
+**Symptom**: `Access Denied`, `Terminated`, or the Rust window appears and immediately closes.
+*   **Cause**: Many Antivirus software (including Windows Defender) and built-in IDE terminals (like VS Code's integrated terminal) restrict programs from opening high-speed network sockets or interacting with other processes.
 *   **Fix**:
-    1.  Close VSCode.<br>
-    2.  Open an external PowerShell terminal.<br>
-    3.  Run `cargo clean`.<br>
-    4.  Run `cargo run --release`.<br>
+    1.  **Do NOT use VS Code's Intergrated Terminal**. It often lacks the necessary permissions.
+    2.  Open a **standalone** Windows PowerShell instance as Administrator.
+    3.  Navigate to your project directory manually (`cd C:\Users\...\mt5-chart`).
+    4.  Run `cargo run --release` from there.
+
+### 2. MQL5: "Access Violation" / Crash on Load
+**Symptom**: MetaTrader 5 crashes instantly when you drag the EA onto a chart, or the EA simply disappears from the chart "smiling face" icon.
+*   **Cause**: **64-bit Pointer Truncation**. The original MQL5 language was often used on 32-bit systems where an `int` (4 bytes) was the same size as a pointer. On modern 64-bit MT5, pointers are 8 bytes (`long`). If you cast a pointer to an `int`, you lose half the memory address, causing an immediate crash when the program tries to access that invalid location.
+*   **Fix**:
+    *   Never use `int` for handles. Use `long` or `intptr_t`.
+    *   Our provided `Zmq.mqh` has been patched to use `long` for all socket context and socket handles. Ensure you are completely replacing your old `Zmq.mqh` with the one from this repository.
+
+### 3. MQL5: "Error 126" (Cannot Load Library)
+**Symptom**: The Expert Advisor log shows `Cannot load 'libzmq.dll' [126]`.
+*   **Cause**: This error means "Module Not Found". It happens for one of three reasons:
+    1.  **Missing DLL**: You didn't put `libzmq.dll` in the `MQL5/Libraries` folder.
+    2.  **Missing Dependency**: `libzmq.dll` itself depends on `libsodium.dll` and the **Visual C++ Redistributable**. If *those* are missing, `libzmq.dll` will fail to load, triggering the same header error.
+    3.  **Architecture Mismatch**: You downloaded a 32-bit DLL for a 64-bit MT5 terminal (or vice versa).
+*   **Fix**:
+    *   Ensure both `libzmq.dll` AND `libsodium.dll` are in `MQL5/Libraries`.
+    *   Ensure you downloaded the **x64 (64-bit)** versions of these DLLs.
+    *   Install the latest **Microsoft Visual C++ Redistributable** (x64).
+
+### 4. MQL5: "Error 22" (Invalid Argument) during Bind
+**Symptom**: The EA loads, but the Journal says `ZmqPublisher: Bind failed with error 22`.
+*   **Cause 1**: **Binding to Wildcard**. Defaulting to `tcp://*:5555` works on Linux but can fail on specific Windows network configurations or Firewall setups.
+    *   **Fix**: Change the bind address in your code (or input settings) to `tcp://0.0.0.0:5555` to explicitly bind to all interfaces, or `tcp://127.0.0.1:5555` for local-only.
+*   **Cause 2**: **String Encoding**. MQL5 uses `wchar_t` (Unicode) for strings internally. ZeroMQ demands C-style standard ASCII/UTF-8 strings. Passing a raw MQL string to the DLL sends garbage bytes.
+    *   **Fix**: The `Zmq.mqh` wrapper must use `StringToCharArray` to convert the string to a byte array before passing it to `zmq_bind`.
+
+### 5. MQL5: "DLL Imports Not Allowed"
+**Symptom**: `Expert 'ZmqPublisher' cannot be loaded because DLL imports are not allowed`.
+*   **Cause**: Security setting in MT5.
+*   **Fix**: Go to **Tools -> Options -> Expert Advisors** and check the box **"Allow DLL imports"**. This is mandatory.
+
+### 6. Rust: "Linker 'link.exe' not found"
+**Symptom**: `cargo run` fails with a massive wall of red text mentioning `link.exe` or `msvc`.
+*   **Cause**: Rust on Windows (MSVC version) relies on the Microsoft C++ Linker, which is not installed by default with Windows.
+*   **Fix**:
+    1.  Download the **Visual Studio Build Tools**.
+    2.  In the installer, select **"Desktop development with C++"**.
+    3.  Ensure the "MSVC ... -C++ x64/x86 build tools" component is checked on the right side.
+    4.  Install (approx. 5-6GB).
+
+### 7. Rust: "OS Error 32" (File used by another process)
+**Symptom**: `error: linking with link.exe failed` or `Access is denied` when trying to run/build.
+*   **Cause**: The compiled executable (`mt5-chart.exe`) is currently running, or is locked by:
+    *   A previous instance that didn't close properly.
+    *   The VS Code underlying process.
+    *   Your Antivirus scanning the new `.exe`.
+*   **Fix**:
+    1.  **Close the GUI window** fully.
+    2.  If it persists, open Task Manager and kill `mt5-chart.exe`.
+    3.  Run `cargo clean` to wipe the locked artifact, then `cargo run --release` again.
+
+### 8. Generic: ZeroMQ Message Format Mismatches
+**Symptom**: Rust client connects but panics with `Error parsing JSON` or prints weird symbols.
+*   **Cause**: The MQL5 Publisher and Rust Subscriber must agree *exactly* on the data format. If MQL5 sends `{"bid": ...}` but Rust expects `{"Bid": ...}` (case sensitivity) or if MQL5 sends a trailing null byte `\0` that JSON parsers hate.
+*   **Fix**:
+    *   Ensure the JSON structure key names match exactly.
+    *   In Rust, strip the trailing null character if necessary: `msg.trim_matches(char::from(0))`.
+
+### 9. Generic: "Address in Use" (EADDRINUSE)
+**Symptom**: You restart the EA and it says `Bind failed`.
+*   **Cause**: You cannot bind to port 5555 if something is already bound to it. Often, when you remove an EA, MT5 might not release the DLL handle instantly, keeping the socket open.
+*   **Fix**: Restart the MetaTrader 5 terminal completely to force-close all DLL handles.
 
 ---
 
