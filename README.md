@@ -5,11 +5,21 @@
 ![ZeroMQ](https://img.shields.io/badge/ZeroMQ-DF0000?style=for-the-badge&logo=zeromq&logoColor=white)
 ![MQL5](https://img.shields.io/badge/MQL5-F5A623?style=for-the-badge&logo=metatraderfive&logoColor=white)
 
-> **First-of-its-kind implementation**: Exploiting micro-second BID/ASK live data from **MetaTrader 5 (MT5)** using a **Rust** client via **ZeroMQ (ZMQ)**.
 
-This repository demonstrates a high-performance, real-time data bridge between a proprietary trading platform (MT5) and a modern systems programming language (Rust). It allows for external charting, analysis, and algorithmic trading logic to separate from the MQL5 environment.
+This software demonstrates a high-performance, real-time data bridge between a proprietary trading platform (MT5) and a modern systems programming language (Rust). Exploiting live BID/ASK data using Rust + ZMQ + MT5's MQL5.
 
 ---
+
+### Software Demonstration
+
+https://github.com/user-attachments/assets/71c51bb2-324b-4c97-ab0d-807a2c0d0d7c
+
+## 🏆 Trivia
+> **The very First**: Exploiting micro-second BID/ASK live data from **MetaTrader 5 (MT5)** using a **Rust** client via **ZeroMQ (ZMQ)**.
+
+I was trying to make a trading orderflows platform, and I came up with an idea: why not use MT5 as datafeed for it? Unfortunately, there are no existing ideal projects I could use as a benchmark, hence I created my own. <br><br>
+I've  worked on and made ~100+ Python trading projects, and I always use MT5 as datafeed, but I want faster; that is why I came up with using Rust as a solution, and ZMQ binding for MT5 is a common practice. In worse case sscenario, there are no Rust+ZMQ+MT5 combination projects existed in the world, which is pretty nuts. I didn't know it only existed in my head, Lmao. So I created it with the help of Google Antigravity.
+
 
 ## 🏆 Novelty & Verification
 
