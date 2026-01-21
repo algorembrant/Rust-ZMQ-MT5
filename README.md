@@ -5,8 +5,13 @@
 ![ZeroMQ](https://img.shields.io/badge/ZeroMQ-DF0000?style=for-the-badge&logo=zeromq&logoColor=white)
 ![MQL5](https://img.shields.io/badge/MQL5-F5A623?style=for-the-badge&logo=metatraderfive&logoColor=white)
 
+## 🏆 Trivia
+> **The very First**: Exploiting micro-second BIDxASK live data from **MetaTrader 5 (MT5)** using the specific combination of **Rust + ZeroMQ (ZMQ) + MetaQuotes Language (MQL5)**..
 
-This software demonstrates a high-performance, real-time data bridge between a proprietary trading platform (MT5) and a modern systems programming language (Rust). Exploiting live BID/ASK data using Rust + ZMQ + MT5's MQL5.
+I was trying to make a trading orderflows platform, and I came up with an idea: why not use MT5 as datafeed for it? Unfortunately, there are no existing ideal projects I could use as a benchmark, hence I created my own. <br><br>
+I've  worked on and made ~100+ Python trading projects, and I always use MT5 as datafeed, but I want faster; that is why I came up with using Rust as a solution, and ZMQ binding for MT5 is a common practice. In worse case sscenario, there are no Rust+ZMQ+MT5 combination projects existed in the world, which is pretty nuts. I didn't know it only existed in my head, Lmao. So I created it with the help of Google Antigravity.
+
+This simple orderflow will serve as my benchmark for future projects.
 
 ---
 
@@ -14,29 +19,16 @@ This software demonstrates a high-performance, real-time data bridge between a p
 
 https://github.com/user-attachments/assets/71c51bb2-324b-4c97-ab0d-807a2c0d0d7c
 
-## 🏆 Trivia
-> **The very First**: Exploiting micro-second BID/ASK live data from **MetaTrader 5 (MT5)** using a **Rust** client via **ZeroMQ (ZMQ)**.
-
-I was trying to make a trading orderflows platform, and I came up with an idea: why not use MT5 as datafeed for it? Unfortunately, there are no existing ideal projects I could use as a benchmark, hence I created my own. <br><br>
-I've  worked on and made ~100+ Python trading projects, and I always use MT5 as datafeed, but I want faster; that is why I came up with using Rust as a solution, and ZMQ binding for MT5 is a common practice. In worse case sscenario, there are no Rust+ZMQ+MT5 combination projects existed in the world, which is pretty nuts. I didn't know it only existed in my head, Lmao. So I created it with the help of Google Antigravity.
 
 
-## 🏆 Novelty & Verification
+## 🏆 A survey for AI leading platforms
 
-**Claim**: This project represents the **first verified implementation** of exploiting micro-second BIDxASK live data from MetaTrader 5 (MT5) using the specific combination of **Rust + ZeroMQ (ZMQ) + MetaQuotes Language (MQL5)**.
-
-Extensive research across GitHub, Hugging Face, and consultation with leading AI models confirmed no prior public projects utilizing this exact high-performance stack existed before this implementation.
-
-### Proof of Functionality
-The following evidence demonstrates the bridge in action, with AI models confirming the lack of prior art:
-
-**Software Demonstration**:
-https://github.com/user-attachments/assets/4d1e6d1e-5f83-40e1-b101-dcc1150127c2
+Extensive research across GitHub, Hugging Face, and consultation with leading AI models confirmed that no prior public projects utilizing this exact high-performance stack existed before this implementation.
 
 **AI Survey Results**:
-> "no public projects combination of Rust, ZeroMQ (ZMQ), and MetaTrader 5 (MT5)"
+> "no public projects combination of Rust, ZeroMQ (ZMQ), and MetaTrader 5 (MT5)."
 
-![Proof 1](https://github.com/user-attachments/assets/18f9865c-39b8-40cd-a969-733c435621db)
+https://github.com/user-attachments/assets/18f9865c-39b8-40cd-a969-733c435621db
 
 **Additional Validation**:
 ![Answer 1](survey/ans1.png)
