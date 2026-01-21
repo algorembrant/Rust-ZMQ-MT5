@@ -23,7 +23,7 @@ https://github.com/user-attachments/assets/71c51bb2-324b-4c97-ab0d-807a2c0d0d7c
 
 ## 🏆 A survey for AI leading platforms
 
-Extensive research across GitHub, Hugging Face, and consultation with leading AI models confirmed that no prior public projects utilizing this exact high-performance stack existed before this implementation.
+Extensive research across GitHub, Hugging Face, and consultation with 9 leading AI models confirmed that no prior public projects utilizing this exact high-performance stack existed before this implementation.
 
 **AI Survey Results**
 > "no public projects combination of Rust, ZeroMQ (ZMQ), and MetaTrader 5 (MT5)."
