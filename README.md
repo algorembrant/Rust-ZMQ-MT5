@@ -1,4 +1,4 @@
-# Rust + ZMQ + MT5: Micro-Second Live Data Bridge
+# Rust + ZMQ + MT5's MQL5: Exploiting Micro-Second BID/ASK Live Data
 
 ![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
 ![MetaTrader 5](https://img.shields.io/badge/MetaTrader_5-0075FF?style=for-the-badge&logo=metatraderfive&logoColor=white)
@@ -29,11 +29,12 @@ https://github.com/user-attachments/assets/4d1e6d1e-5f83-40e1-b101-dcc1150127c2
 ![Proof 1](https://github.com/user-attachments/assets/18f9865c-39b8-40cd-a969-733c435621db)
 
 **Additional Validation**:
-
-| Model Response 1 | Model Response 2 | Model Response 3 |
-| :---: | :---: | :---: |
-| ![Answer 1](survey/ans1.png) | ![Answer 2](survey/ans2.png) | ![Answer 3](survey/ans3.png) |
-| ![Answer 4](survey/ans4.png) | ![Answer 5](survey/ans5.png) | ![Answer 6](survey/ans6.png) |
+![Answer 1](survey/ans1.png)
+![Answer 2](survey/ans2.png)
+![Answer 3](survey/ans3.png)
+![Answer 4](survey/ans4.png)
+![Answer 5](survey/ans5.png)
+![Answer 6](survey/ans6.png)
 
 ---
 
