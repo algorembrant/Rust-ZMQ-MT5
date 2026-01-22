@@ -52,6 +52,8 @@ sequenceDiagram
 
 
 ## 🏆 Trivia
+
+[<img width="911" height="214" alt="image" src="https://github.com/user-attachments/assets/67fb1c13-53db-4056-b022-e8a64db493e4" />](https://x.com/qsrsunstoic/status/2014165161381363739)
 > **The very First**: Exploiting micro-second BID/ASK live trading data from **MetaTrader 5 (MT5)** using the specific combination of **Rust + ZeroMQ (ZMQ) + MetaQuotes Language (MQL5)**..
 
 I was trying to make a trading orderflows platform, and I came up with an idea: why not use MT5 as datafeed for it? Unfortunately, there are no existing ideal projects I could use as a benchmark, hence I created my own. <br><br>
