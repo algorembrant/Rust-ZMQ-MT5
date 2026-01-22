@@ -124,11 +124,19 @@ Extensive research across GitHub, Hugging Face, and consultation with 9 leading 
 </table>
 
 
-I used AI-leading platforms (Grok, Gemini, Claude, ChatGPT, MSCopilot, Perplexity, Baidu (Ernie Bot), Deepseek, Qwen) to validate my claim for _"**The very First**: Exploiting micro-second BID/ASK live trading data from **MetaTrader 5 (MT5)** using the specific combination of **Rust + ZeroMQ (ZMQ) + MetaQuotes Language (MQL5).**"_ And also using 9 search combinations across for each 4 scholarly platforms (Arxiv, Google Scholar, SSRN, Baidu Scholar). [*scholar.md*](search/scholar.md)
+I used leading AI platforms (Grok, Gemini, Claude, ChatGPT, MSCopilot, Perplexity, Baidu (Ernie Bot), DeepSeek, Qwen) to validate my claim for _"**The very First**: Exploiting micro-second BID/ASK live trading data from **MetaTrader 5 (MT5)** using the specific combination of **Rust + ZeroMQ (ZMQ) + MetaQuotes Language (MQL5).**"_  
 
-*Visit my previous app to explore 284 AI platforms in one place, [AiQG](https://aiqg.vercel.app/)*<br>
+In addition, I ran nine different search combinations on each of four scholarly platforms: Arxiv, Google Scholar, SSRN, and Baidu Scholar. The detailed results are documented in [*scholar.md*](search/scholar.md).
 
-Well, some of those AI models hallucinate, proceeded to suggest a project's combination of a pair: either Python with ZMQ or C++ with ZMQ, but not the combination of all three (Rust + ZMQ + MT5) I've mentioned. Hence, I've prompt a additional clarification saying ***"strictly those 3 combination"***, and proceeded to prompt the same question: ***"Show me GitHub or Hugging projects or any link that has 'Rust + ZMQ + MT5 combination' (strictly those 3), never miss a single link"***. MT5's native language is MQL5, built after C++, and I wanted to fetch data from that platform using ZMQ and plot it using Rust for a fast-phase developing chart tool. After that, they ALL say the same.
+*Visit my previous app to explore 284 AI platforms in one place, [AiQG](https://aiqg.vercel.app/)*  
+<br>
+
+During this process, some AI models produced hallucinated results. They suggested projects that only used partial pairs, such as Python with ZMQ or C++ with ZMQ, but never the full combination of all three components that I specified, namely Rust + ZMQ + MT5.
+
+To correct this, I provided an explicit follow-up instruction stating ***"strictly those 3 combination"***. I then repeated the same query: ***"Show me GitHub or Hugging projects or any link that has 'Rust + ZMQ + MT5 combination' (strictly those 3), never miss a single link"***.
+
+MetaTrader 5 uses MQL5 as its native language, which is built on C++. My objective was to extract live trading data from MT5 via ZMQ and process and visualize it in Rust to enable fast development of a high performance charting tool. After this clarification and repeated querying, all platforms returned the same conclusion.
+
 
 > "no public projects combination of Rust, ZeroMQ (ZMQ), and MetaTrader 5 (MT5)."
 
