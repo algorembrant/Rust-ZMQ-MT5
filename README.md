@@ -92,6 +92,8 @@ Extensive research across GitHub, Hugging Face, and consultation with 9 leading 
         loop
       ></video>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <video 
         src="https://github.com/user-attachments/assets/e9631b52-e548-4224-8684-72aa282c70f0" 
@@ -100,8 +102,17 @@ Extensive research across GitHub, Hugging Face, and consultation with 9 leading 
         loop
       ></video>
     </td>
+    <td align="center">
+      <video 
+        src="https://github.com/user-attachments/assets/fe251361-1103-4c6b-b198-88134820a074" 
+        controls 
+        muted
+        loop
+      ></video>
+    </td>
   </tr>
 </table>
+
 
 
 **Additional Validation**:
