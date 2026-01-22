@@ -92,6 +92,14 @@ Extensive research across GitHub, Hugging Face, and consultation with 9 leading 
         loop
       ></video>
     </td>
+    <td align="center">
+      <video 
+        src="https://github.com/user-attachments/assets/e9631b52-e548-4224-8684-72aa282c70f0" 
+        controls 
+        muted
+        loop
+      ></video>
+    </td>
   </tr>
 </table>
 
@@ -116,7 +124,7 @@ Extensive research across GitHub, Hugging Face, and consultation with 9 leading 
 </table>
 
 
-I used AI-leading platforms (Grok, Gemini, Claude, ChatGPT, MSCopilot, Perplexity, Baidu (Ernie Bot), Deepseek, Qwen) to validate my claim for _"**The very First**: Exploiting micro-second BID/ASK live trading data from **MetaTrader 5 (MT5)** using the specific combination of **Rust + ZeroMQ (ZMQ) + MetaQuotes Language (MQL5).**"_. And also using 9 search combination across 4 scholarly platforms (Arxiv, Google Scholar, SSRN, Baidu Scholar). [*scholar.md*](search/scholar.md)
+I used AI-leading platforms (Grok, Gemini, Claude, ChatGPT, MSCopilot, Perplexity, Baidu (Ernie Bot), Deepseek, Qwen) to validate my claim for _"**The very First**: Exploiting micro-second BID/ASK live trading data from **MetaTrader 5 (MT5)** using the specific combination of **Rust + ZeroMQ (ZMQ) + MetaQuotes Language (MQL5).**"_ And also using 9 search combinations across for each 4 scholarly platforms (Arxiv, Google Scholar, SSRN, Baidu Scholar). [*scholar.md*](search/scholar.md)
 
 *Visit my previous app to explore 284 AI platforms in one place, [AiQG](https://aiqg.vercel.app/)*<br>
 
