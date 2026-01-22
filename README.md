@@ -49,7 +49,7 @@ sequenceDiagram
 ```
 
 
-
+---
 
 ## 🏆 Trivia
 
@@ -60,11 +60,6 @@ I was trying to make a trading orderflows platform, and I came up with an idea: 
 I've  worked on and made ~100+ Python trading projects, and I always use MT5 as datafeed, but I want faster; that is why I came up with using Rust as a solution, and ZMQ binding for MT5 is a common practice. In worse case sscenario, there are no _Rust + ZMQ + MT5_ combination projects existed in the world, which is pretty nuts. I didn't know it only existed in my head, Lmao. So I created it with the help of Google Antigravity.
 
 This simple orderflow tool will serve as a benchmark for future projects.
-
----
-
-
-
 
 ## 🏆 A survey for AI leading platforms
 
